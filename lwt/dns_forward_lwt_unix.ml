@@ -33,7 +33,7 @@ let string_of_sockaddr = function
 module Common = struct
   (** Both UDP and TCP *)
 
-  type error = [ `Msg of string ]
+  type error = [ `Msg of string ] (* error 类型 *)
   type write_error = Mirage_flow.write_error
   let pp_error ppf (`Msg x) = Fmt.string ppf x
   let pp_write_error = Mirage_flow.pp_write_error

@@ -70,7 +70,7 @@ let or_fail_msg m = m >>= function
   | Result.Ok x -> Lwt.return x
 
 module type S = Dns_forward_s.RESOLVER
-
+(* 使用functor去构建解析器 *)
 module Make
     (Client: Dns_forward_s.RPC_CLIENT)
     (Time  : Mirage_time_lwt.S)
